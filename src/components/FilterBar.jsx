@@ -10,7 +10,7 @@ export default function FilterBar({
     searchQuery || selectedIndustry !== "All" || selectedLocation !== "All" || sortBy !== "name-asc";
 
   return (
-    <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-5">
+    <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-100 rounded-2xl p-4 sm:p-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
 
         {/* 1. Search Input */}
@@ -25,7 +25,7 @@ export default function FilterBar({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search companies..."
-            className="w-full bg-slate-900/60 border border-slate-600/50 rounded-xl pl-9 pr-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all"
+            className="w-full bg-slate-900/60 border border-slate-600/50 rounded-xl pl-9 pr-4 py-2.5 text-sm text-slate-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all"
           />
         </div>
 
@@ -33,7 +33,7 @@ export default function FilterBar({
         <select
           value={selectedIndustry}
           onChange={(e) => onIndustryChange(e.target.value)}
-          className="bg-slate-900/60 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all cursor-pointer"
+          className="bg-slate-900/60 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all cursor-pointer"
         >
           {industries.map((ind) => (
             <option key={ind} value={ind} className="bg-slate-900">
@@ -46,7 +46,7 @@ export default function FilterBar({
         <select
           value={selectedLocation}
           onChange={(e) => onLocationChange(e.target.value)}
-          className="bg-slate-900/60 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all cursor-pointer"
+          className="bg-slate-900/60 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all cursor-pointer"
         >
           {locations.map((loc) => (
             <option key={loc} value={loc} className="bg-slate-900">
@@ -59,7 +59,7 @@ export default function FilterBar({
         <select
           value={sortBy}
           onChange={(e) => onSortChange(e.target.value)}
-          className="bg-slate-900/60 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all cursor-pointer"
+          className="bg-slate-900/60 border border-slate-600/50 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all cursor-pointer"
         >
           <option value="name-asc" className="bg-slate-900">Name: A → Z</option>
           <option value="name-desc" className="bg-slate-900">Name: Z → A</option>

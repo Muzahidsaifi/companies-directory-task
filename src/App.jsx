@@ -164,7 +164,7 @@ export default function App() {
             <p className="text-slate-300 text-xl font-medium">
               No companies found
             </p>
-            <p className="text-slate-500 text-sm">
+            <p className="text-slate-400 text-sm">
               Try adjusting your filters
             </p>
             <button

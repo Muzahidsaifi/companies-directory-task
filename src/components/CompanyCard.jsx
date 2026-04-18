@@ -42,10 +42,10 @@ export default function CompanyCard({ company, index }) {
         </div>
 
         <div className="flex-1 min-w-0">
-          <h3 className="text-slate-100 font-semibold text-base leading-tight truncate group-hover:text-white transition-colors">
+          <h3 className="text-slate-800 font-semibold text-base leading-tight truncate group-hover:text-white transition-colors">
             {company.name}
           </h3>
-          <p className="text-slate-500 text-xs mt-0.5">{company.website}</p>
+          <p className="text-slate-400 text-xs mt-0.5">{company.website}</p>
         </div>
       </div>
 
@@ -73,18 +73,18 @@ export default function CompanyCard({ company, index }) {
       </div>
 
       {/* Stats Footer */}
-      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-slate-700/50">
+      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-slate-100">
         <div className="text-center">
-          <p className="text-slate-200 font-semibold text-sm">{company.employees.toLocaleString()}</p>
-          <p className="text-slate-500 text-xs">Employees</p>
+          <p className="text-slate-700 font-semibold text-sm">{company.employees.toLocaleString()}</p>
+          <p className="text-slate-400 text-xs">Employees</p>
         </div>
-        <div className="text-center border-x border-slate-700/50">
-          <p className="text-slate-200 font-semibold text-sm">{company.founded}</p>
-          <p className="text-slate-500 text-xs">Founded</p>
+        <div className="text-center border-x border-slate-100">
+          <p className="text-slate-700 font-semibold text-sm">{company.founded}</p>
+          <p className="text-slate-400 text-xs">Founded</p>
         </div>
         <div className="text-center">
           <p className="text-emerald-400 font-semibold text-sm">{company.revenue}</p>
-          <p className="text-slate-500 text-xs">Revenue</p>
+          <p className="text-slate-400 text-xs">Revenue</p>
         </div>
       </div>
     </div>

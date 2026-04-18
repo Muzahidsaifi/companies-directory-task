@@ -22,9 +22,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange, tota
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-slate-700/50">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-slate-100">
       {/* Info */}
-      <p className="text-slate-500 text-sm">
+      <p className="text-slate-400 text-sm">
         Showing <span className="text-slate-300">{startItem}–{endItem}</span> of{" "}
         <span className="text-slate-300">{totalItems}</span> companies
       </p>
