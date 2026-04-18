@@ -4,7 +4,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange, tota
   const startItem = (currentPage - 1) * itemsPerPage + 1;
   const endItem = Math.min(currentPage * itemsPerPage, totalItems);
 
-  // Build page number array with ellipsis logic
   const getPageNumbers = () => {
     const pages = [];
     if (totalPages <= 5) {
@@ -12,9 +11,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange, tota
     } else {
       pages.push(1);
       if (currentPage > 3) pages.push("...");
-      for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) {
-        pages.push(i);
-      }
+      for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) pages.push(i);
       if (currentPage < totalPages - 2) pages.push("...");
       pages.push(totalPages);
     }
@@ -22,40 +19,33 @@ export default function Pagination({ currentPage, totalPages, onPageChange, tota
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-slate-100">
-      {/* Info */}
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-slate-200">
       <p className="text-slate-400 text-sm">
-        Showing <span className="text-slate-300">{startItem}–{endItem}</span> of{" "}
-        <span className="text-slate-300">{totalItems}</span> companies
+        Showing <span className="text-slate-600">{startItem}–{endItem}</span> of{" "}
+        <span className="text-slate-600">{totalItems}</span> companies
       </p>
-
-      {/* Page Buttons */}
       <div className="flex items-center gap-1.5">
-        {/* Prev */}
         <button
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-blue-500 hover:bg-blue-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
-        {/* Page Numbers */}
         {getPageNumbers().map((page, i) =>
           page === "..." ? (
-            <span key={`ellipsis-${i}`} className="w-8 h-8 flex items-center justify-center text-slate-600 text-sm">
-              ···
-            </span>
+            <span key={`e-${i}`} className="w-8 h-8 flex items-center justify-center text-slate-400 text-sm">···</span>
           ) : (
             <button
               key={page}
               onClick={() => onPageChange(page)}
               className={`w-8 h-8 flex items-center justify-center rounded-lg text-sm font-medium transition-all ${
                 currentPage === page
-                  ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/25"
-                  : "text-slate-400 hover:text-white hover:bg-slate-700"
+                  ? "bg-blue-500 text-white shadow-md shadow-blue-500/25"
+                  : "text-slate-500 hover:text-blue-500 hover:bg-blue-50"
               }`}
             >
               {page}
@@ -63,11 +53,10 @@ export default function Pagination({ currentPage, totalPages, onPageChange, tota
           )
         )}
 
-        {/* Next */}
         <button
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-blue-500 hover:bg-blue-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
