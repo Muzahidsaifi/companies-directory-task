@@ -32,7 +32,7 @@ export default function CompanyCard({ company, index }) {
   const gradient = LOGO_GRADIENTS[index % LOGO_GRADIENTS.length];
 
   return (
-    <div className="group relative bg-slate-800/50 hover:bg-slate-800/80 border border-slate-700/50 hover:border-indigo-500/30 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-0.5 cursor-pointer">
+   <div className="group relative bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-300 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-0.5 cursor-pointer">
 
       {/* Card Header */}
       <div className="flex items-start gap-3 mb-3">

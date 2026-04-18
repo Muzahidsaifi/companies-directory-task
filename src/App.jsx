@@ -21,8 +21,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
   // ── MOCK API CALL (simulating fetch) ──────────────────────────────────────
-  // Interview me explain karo: "Maine JSON file ko directly import kiya aur
-  // setTimeout se real API delay simulate kiya - taaki loading state dikhaye."
+  
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
@@ -49,8 +48,7 @@ export default function App() {
   );
 
   // ── FILTERING + SORTING (useMemo = recalculate only when deps change) ─────
-  //  "Maine useMemo isliye use kiya kyunki filtering har
-  // render pe dobara na chale - sirf tab jab filter values badlein."
+
   const filteredCompanies = useMemo(() => {
     let result = [...companies];
 
@@ -112,7 +110,7 @@ export default function App() {
 
   // ── RENDER ─────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <Header />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
